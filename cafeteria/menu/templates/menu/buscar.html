@@ -1,0 +1,16 @@
+{% extends 'menu/base.html' %}
+
+{% block content %}
+<h1>Buscar en el Menú</h1>
+<form method="get">
+    <input type="text" name="q" placeholder="Buscar...">
+    <button type="submit">Buscar</button>
+</form>
+<ul>
+    {% for producto in productos %}
+    <li>{{ producto.nombre }} - {{ producto.precio }}</li>
+    {% empty %}
+    <li>No se encontraron resultados.</li>
+    {% endfor %}
+</ul>
+{% endblock %}
